@@ -1,10 +1,10 @@
 site_name: SmartGen Docs
-site_url: https://bayeziddev.github.io/Py-Docs/
-repo_url: https://bayeziddev.github.io/Py-Docs
-edit_uri: tree/master/docs/src/markdown
-site_description: A Collection of Useful Extensions for Python Markdown
+site_url: https://docs.smartgentools.com/
+repo_url: https://github.com/bayeziddev/Py-Docs
+edit_uri: edit/main/docs/src/markdown/
+site_description: SmartGen Docs — a collection of useful extensions for Python-Markdown (admonitions, tabs, diagrams, code highlighting, and more).
 copyright: |
-  Copyright &copy; 2026 <a href="https://sayadbayezid.com/"  target="_blank" rel="noopener">SayadBayezid</a>
+  Copyright &copy; 2026 <a href="https://sayadbayezid.com/" target="_blank" rel="noopener">SayadBayezid</a> · Docs based on <a href="https://github.com/facelessuser/pymdown-extensions" target="_blank" rel="noopener">PyMdown Extensions</a> (MIT)
 
 docs_dir: docs/src/markdown
 theme:
