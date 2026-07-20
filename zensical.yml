@@ -6,6 +6,7 @@ site_description: SmartGen Docs — a collection of useful extensions for Python
 copyright: |
   Copyright &copy; 2026 <a href="https://sayadbayezid.com/" target="_blank" rel="noopener">SayadBayezid</a> · Docs based on <a href="https://github.com/facelessuser/pymdown-extensions" target="_blank" rel="noopener">PyMdown Extensions</a> (MIT)
 
+
 docs_dir: docs/src/markdown
 theme:
   name: material
@@ -166,8 +167,8 @@ markdown_extensions:
       repo_url_shorthand: true
       social_url_shorthand: true
       social_url_shortener: true
-      user: facelessuser
-      repo: pymdown-extensions
+      user: Bayeziddev
+      repo: py-docs
       normalize_issue_symbols: true
   - pymdownx.tilde:
   - pymdownx.caret:
