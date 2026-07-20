@@ -3,15 +3,37 @@
 {% block announce %}{% include "announce.html" ignore missing %}{% endblock %}
 
 {% block content %}
+  {# Header: site title and quick links #}
+  <header class="site-header" style="padding: .5rem 1rem; border-bottom: 1px solid var(--md-default-divider-color); display:flex; align-items:center; justify-content:space-between;">
+    <div class="site-title" style="display:flex; align-items:center; gap:.5rem;">
+      <a href="{{ config.site_url }}" style="text-decoration:none; color:inherit;">
+        <strong style="font-size:1.125rem;">Smartgen Docs</strong>
+        <small style="margin-left:.5rem; color:var(--md-secondary-fg-color);">SGpyDocs</small>
+      </a>
+    </div>
+    <nav class="site-links" aria-label="Site links" style="display:flex; gap:.75rem; align-items:center;">
+      <a href="https://github.com/bayeziddev/Py-Docs" title="Project on GitHub" style="display:inline-flex; align-items:center; gap:.4rem;">
+        {% include ".icons/github.svg" %}
+        <span style="color:var(--md-secondary-fg-color);">GitHub</span>
+      </a>
+      <a href="https://smartgentools.com" title="Smartgen Tools" style="color:var(--md-secondary-fg-color);">Smartgentools.com</a>
+    </nav>
+  </header>
+
   {{ super() }}
-  <footer class="sponsorship">
-    <hr>
-    <a href="https://github.com/sponsors/bayeziddev/" title="Become a sponsor">
-      <span class="twemoji heart-throb-hover">
-        {% set icon = "octicons/heart-fill-16" %}
-        {% include ".icons/" ~ icon ~ ".svg" %}
-      </span>
-    </a>
-    <hr>
+
+  <footer class="sponsorship" style="margin-top:2rem; padding:1.25rem; border-top:1px solid var(--md-default-divider-color); font-size:0.95rem;">
+    <div style="display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap;">
+      <div>
+        <span>Developed by <a href="https://www.sayadbayezid.com" target="_blank" rel="noopener">Sayad Bayezid</a></span>
+        <span style="margin-left:.5rem;">— <a href="https://github.com/bayeziddev/Py-Docs" target="_blank" rel="noopener">View source</a></span>
+      </div>
+      <div style="display:flex; align-items:center; gap:.5rem;">
+        <a href="https://github.com/bayeziddev/Py-Docs" title="Repo" style="display:inline-flex; align-items:center;">
+          {% include ".icons/github.svg" %}
+          <span style="color:var(--md-secondary-fg-color); margin-left:.35rem;">bayeziddev/Py-Docs</span>
+        </a>
+      </div>
+    </div>
   </footer>
 {% endblock %}
