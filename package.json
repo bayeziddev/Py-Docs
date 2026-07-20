@@ -20,7 +20,7 @@
     "@babel/cli": "^7.29.7",
     "@babel/core": "^7.29.7",
     "@babel/eslint-parser": "^7.29.7",
-    "@babel/plugin-external-helpers": "^7.29.7",
+    "@babel/plugin-external-helpers": "^8.0.1",
     "@babel/preset-env": "^7.29.7",
     "@babel/register": "^7.29.7",
     "@fortawesome/fontawesome-free": "^7.2.0",
