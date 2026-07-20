@@ -1,11 +1,11 @@
 ---
 icon: lucide/house
 ---
-# PyMdown Extensions
+# SmartGen Docs
 
 ## Overview
 
-PyMdown Extensions is a collection of extensions for Python Markdown. They were originally written to make writing
+SmartGen Docs is a collection of extensions for Python Markdown. They were originally written to make writing
 documentation more enjoyable. They cover a wide range of solutions, and while not every extension is needed by all
 people, there is usually at least one useful extension for everybody.
 
