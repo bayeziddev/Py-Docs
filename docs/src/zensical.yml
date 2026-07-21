@@ -4,7 +4,7 @@ repo_url: https://bayeziddev.github.io/Py-Docs
 edit_uri: tree/master/docs/src/markdown
 site_description: A Collection of Useful Extensions for Python Markdown
 copyright: |
-  Copyright &copy; 2026 <a href="https://sayadbayezid.com/"  target="_blank" rel="noopener">SayadBayezid</a>
+  Copyright &copy; 2026 <a href="https://smartgentools.com/"  target="_blank" rel="noopener">SmartGen</a>
 
 docs_dir: docs/src/markdown
 theme:
@@ -267,7 +267,7 @@ markdown_extensions:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/facelessuser
+      link: https://github.com/bayeziddev
 
 extra_css:
   # - https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css
