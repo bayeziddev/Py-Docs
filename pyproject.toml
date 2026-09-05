@@ -1,178 +1,189 @@
+# Copyright (c) 2026 Sayad Md Bayezid Hosan (Smartgen Platform)
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to
+# deal in the Software without restriction, including without limitation the
+# rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+# sell copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+
+# The above copyright notice and this permission notice shall be included in
+# all copies or substantial portions of the Software.
+
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+# FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+# IN THE SOFTWARE.
+
 [build-system]
 requires = [
-    "hatchling>=1.26",
+    "setuptools>=69.0",
+    "wheel"
 ]
-build-backend = "hatchling.build"
+build-backend = "setuptools.build_meta"
 
 [project]
-name = "pymdown-extensions"
-description = "Extension pack for Python Markdown."
+name = "smartgen-docs"
+version = "1.0.1"
+
+description = "SmartGen Docs is a modern, open-source static documentation framework for building fast, searchable, SEO-friendly documentation websites, API references, developer portals, technical guides, and knowledge bases."
+
 readme = "README.md"
-license = "MIT"
-requires-python = ">=3.10"
+requires-python = ">=3.9"
+
+license = { text = "MIT" }
+
 authors = [
-    { name = "Isaac Muse", email = "Isaac.Muse@gmail.com" },
+    { name = "Sayad Md Bayezid Hosan", email = "contact@smartgentools.com" }
 ]
+
+maintainers = [
+    { name = "Sayad Md Bayezid Hosan", email = "contact@smartgentools.com" }
+]
+
 keywords = [
-    "extensions",
+    "smartgen",
+    "smartgen docs",
+    "documentation",
+    "documentation generator",
+    "documentation framework",
+    "developer portal",
+    "knowledge base",
+    "technical documentation",
+    "api documentation",
     "markdown",
+    "static site generator",
+    "static website",
+    "seo",
+    "search",
+    "developer tools"
 ]
-dynamic = [
-    "classifiers",
-    "version",
+
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Environment :: Web Environment",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Information Technology",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Documentation",
+    "Topic :: Internet :: WWW/HTTP",
+    "Topic :: Internet :: WWW/HTTP :: Site Management",
+    "Topic :: Software Development",
+    "Topic :: Software Development :: Documentation",
+    "Topic :: Text Processing :: Markup",
+    "Topic :: Text Processing :: Markup :: HTML",
+    "Typing :: Typed"
 ]
 
 dependencies = [
-    "Markdown>=3.6",
-    "pyyaml"
+    "click>=8.1",
+    "Jinja2>=3.1",
+    "markdown2>=2.5",
+    "PyYAML>=6.0",
+    "watchdog>=6.0",
+    "Pygments>=2.18"
+]
+
+[project.optional-dependencies]
+
+search = [
+    "whoosh>=2.7"
+]
+
+images = [
+    "Pillow>=11.0"
+]
+
+minify = [
+    "htmlmin>=0.1",
+    "csscompressor>=0.9",
+    "jsmin>=3.0"
+]
+
+dev = [
+    "pytest>=8.0",
+    "black>=25.0",
+    "ruff>=0.12",
+    "build>=1.2",
+    "twine>=6.0"
+]
+
+screenshots = [
+    "playwright>=1.50"
+]
+
+upload = [
+    "fastapi>=0.115",
+    "uvicorn>=0.30",
+    "python-multipart>=0.0.9"
+]
+
+full = [
+    "whoosh>=2.7",
+    "Pillow>=11.0",
+    "htmlmin>=0.1",
+    "csscompressor>=0.9",
+    "jsmin>=3.0",
+    "pytest>=8.0",
+    "black>=25.0",
+    "ruff>=0.12",
+    "build>=1.2",
+    "twine>=6.0",
+    "playwright>=1.50",
+    "fastapi>=0.115",
+    "uvicorn>=0.30",
+    "python-multipart>=0.0.9"
 ]
 
 [project.urls]
-Homepage = "https://github.com/facelessuser/pymdown-extensions"
+Homepage = "https://www.smartgentools.com"
+Documentation = "https://docs.smartgentools.com/"
+Repository = "https://github.com/bayeziddev/smartGenDocs"
+Issues = "https://github.com/bayeziddev/smartGenDocs/issues"
+Discussions = "https://github.com/bayeziddev/smartGenDocs/discussions"
+Releases = "https://github.com/bayeziddev/smartGenDocs/releases"
+Changelog = "https://docs.smartgentools.com/docs/releases.html"
+Developer = "https://g.dev/SayadBayezid"
+GitHub = "https://github.com/sayadbayezid"
+LinkedIn = "https://www.linkedin.com/in/sayadbayezid"
+Website = "https://www.smartgentools.com"
 
-[tool.hatch.version]
-source = "code"
-path = "pymdownx/__meta__.py"
+[project.scripts]
+smartgen = "smartgen_docs.cli:main"
+smartgen-docs = "smartgen_docs.cli:main"
 
-[tool.hatch.metadata]
-allow-direct-references = true
+[project.entry-points."smartgen.builders"]
 
-[project.optional-dependencies]
-extra = [
-    "Pygments>=2.19.1"
-]
+[project.entry-points."smartgen.plugins"]
 
-[tool.hatch.build.targets.sdist]
+[project.entry-points."smartgen.themes"]
+
+[project.entry-points."smartgen.markdown"]
+
+[project.entry-points."smartgen.search"]
+
+[tool.setuptools.packages.find]
+where = ["."]
 include = [
-    "/docs/src/markdown/**/*.md",
-    "/docs/src/markdown/**/*.gif",
-    "/docs/src/markdown/**/*.png",
-    "/docs/src/markdown/dictionary/*.txt",
-    "/docs/theme/**/*.css",
-    "/docs/theme/**/*.js",
-    "/docs/theme/**/*.html",
-    "/docs/theme/**/*.css.map",
-    "/docs/theme/**/*.js.map",
-    "/requirements/*.txt",
-    "/pymdownx/**/*.py",
-    "/tests/**/*.txt",
-    "/tests/**/*.py",
-    "/tests/**/*.html",
-    "/tests/**/*.yml",
-    "/tests/**/*.css",
-    "/tests/**/*.png",
-    "/tools/__init__.py",
-    "/tools/pymdownx_md_render.py",
-    "/.pyspelling.yml",
-    "/.coveragerc",
-    "/zensical.yml",
-    "/run_tests.py"
+    "smartgen_docs*"
 ]
 
-[tool.hatch.build.targets.wheel]
-include = [
-    "/pymdownx",
+[tool.setuptools.package-data]
+smartgen_docs = [
+    "themes/**/*",
+    "templates/**/*",
+    "assets/**/*",
+    "static/**/*",
+    "icons/**/*",
+    "schemas/**/*"
 ]
 
-[tool.hatch.metadata.hooks.custom]
-
-[tool.mypy]
-files = [
-    "pymdownx/blocks/block.py"
-]
-strict = true
-show_error_codes = true
-
-[[tool.mypy.overrides]]
-module = [
-    "pymdownx.superfences"
-]
-ignore_errors = true
-
-[tool.ruff]
-line-length = 120
-
-extend-exclude = [
-    "build/*",
-    ".tox/*",
-    "site/*",
-    "tools/tags/*",
-    "node_modules/*",
-    "*_db.py",
-    "dist/*"
-]
-
-lint.select = [
-    "A",    # flake8-builtins
-    "B",    # flake8-bugbear
-    "D",    # pydocstyle
-    "C4",   # flake8-comprehensions
-    "N",    # pep8-naming
-    "E",    # pycodestyle
-    "F",    # pyflakes
-    "PGH",  # pygrep-hooks
-    "RUF",  # ruff
-    # "UP",   # pyupgrade
-    "W",    # pycodestyle
-    "YTT",  # flake8-2020,
-    "PERF"  # Perflint
-]
-
-lint.ignore = [
-    "E741",
-    "D202",
-    "D401",
-    "D212",
-    "D203",
-    "N802",
-    "N801",
-    "N803",
-    "N806",
-    "N813",
-    "N818",
-    "RUF012",
-    "RUF005"
-]
-
-[tool.tox]
-legacy_tox_ini = """
-    [tox]
-    isolated_build = true
-    envlist =
-        {py310,py311,py312,py313,py314}, lint, documents
-
-    [testenv]
-    passenv = LANG
-    deps=
-        .[extra]
-        -r requirements/test.txt
-    commands=
-        "{envpython}" -m mypy
-        {envbindir}/py.test --cov pymdownx --cov-append {toxinidir}
-        {envbindir}/coverage html -d {envtmpdir}/coverage
-        {envbindir}/coverage xml
-        {envbindir}/coverage report --show-missing
-
-    [testenv:documents]
-    deps=
-        -r requirements/docs.txt
-        .[extra]
-    commands=
-        {envpython} -m pip install .
-        {envpython} -m zensical build -f zensical.yml --clean
-        {envpython} -m pyspelling -j 8
-
-    [testenv:lint]
-    deps=
-        -r requirements/lint.txt
-    commands=
-        {envbindir}/ruff check {toxinidir}
-
-    [flake8]
-    exclude=build/*,.tox/*,.c9/*,site/*,tools/tags/*,node_modules/*,*_db.py,dist/*
-    max-line-length=120
-    ignore=D202,N802,D203,D401,W504,N813,E741,N818
-
-    [pytest]
-    addopts=--ignore=tools --ignore=node_modules
-"""
+[tool.setuptools]
+include-package-data = true
+zip-safe = false
